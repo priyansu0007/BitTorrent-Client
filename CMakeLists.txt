@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
+if(POLICY CMP0135)
+    cmake_policy(SET CMP0135 NEW)
+endif()
 project(BitTorrentClient
     VERSION 0.1.0
     LANGUAGES CXX
@@ -22,7 +25,7 @@ else()
     add_compile_options(
         -Wall
         -Wextra
-        -Wpendatic
+        -Wpedantic
         -Wconversion
         -Wsign-conversion
         -Wshadow
